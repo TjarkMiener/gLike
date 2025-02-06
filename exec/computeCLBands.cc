@@ -126,14 +126,15 @@ int main(int argc, char* argv[])
   // annihilation/decay channel string
   TString  strchannel;
   Double_t minmass = 0;
-  if     (!channel.CompareTo("bb",TString::kIgnoreCase))         {strchannel = "b #bar{b}";         minmass=5;}
-  else if(!channel.CompareTo("tautau",TString::kIgnoreCase))     {strchannel = "#tau^{+} #tau^{-}"; minmass=1.8;}
-  else if(!channel.CompareTo("mumu",TString::kIgnoreCase))       {strchannel = "#mu^{+} #mu^{-}";   minmass=0.106;}
-  else if(!channel.CompareTo("WW",TString::kIgnoreCase))         {strchannel = "W^{+} W^{-}";       minmass=80.3;}
-  else if(!channel.CompareTo("gammagamma",TString::kIgnoreCase)) {strchannel = "#gamma#gamma";      minmass=0;}
-  else if(!channel.CompareTo("pi0pi0",TString::kIgnoreCase))     {strchannel = "#pi^{0}#pi^{0}";    minmass=0.135;}
-  else if(!channel.CompareTo("gammapi0",TString::kIgnoreCase))   {strchannel = "#pi^{0}#gamma";     minmass=0.135/2.;}
-  else if(!channel.CompareTo("pi0gamma",TString::kIgnoreCase))   {strchannel = "#pi^{0}#gamma";     minmass=0.135/2.;}
+  if     (!channel.CompareTo("bb",TString::kIgnoreCase))            {strchannel = "b #bar{b}";         minmass=5;}
+  else if(!channel.CompareTo("tautau",TString::kIgnoreCase))        {strchannel = "#tau^{+} #tau^{-}"; minmass=1.8;}
+  else if(!channel.CompareTo("mumu",TString::kIgnoreCase))          {strchannel = "#mu^{+} #mu^{-}";   minmass=0.106;}
+  else if(!channel.CompareTo("WW",TString::kIgnoreCase))            {strchannel = "W^{+} W^{-}";       minmass=80.3;}
+  else if(!channel.CompareTo("gammagamma",TString::kIgnoreCase))    {strchannel = "#gamma#gamma";      minmass=0;}
+  else if(!channel.CompareTo("goldstinoline",TString::kIgnoreCase)) {strchannel = "goldstinoline";     minmass=0;}
+  else if(!channel.CompareTo("pi0pi0",TString::kIgnoreCase))        {strchannel = "#pi^{0}#pi^{0}";    minmass=0.135;}
+  else if(!channel.CompareTo("gammapi0",TString::kIgnoreCase))      {strchannel = "#pi^{0}#gamma";     minmass=0.135/2.;}
+  else if(!channel.CompareTo("pi0gamma",TString::kIgnoreCase))      {strchannel = "#pi^{0}#gamma";     minmass=0.135/2.;}
   else strchannel = "";
   if(isDecay) minmass*=2;
   

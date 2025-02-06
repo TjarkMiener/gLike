@@ -29,7 +29,7 @@ jointLklDM.plotsDir: ../plots/LAT_dSph_2015
 ANALYSIS CONFIGURATION
 ######################
 
-# channel to be analyzed (bb, cc, tt, tautau, mumu, WW, ZZ, hh, gammagamma, pi0pi0, pi0gamma, ee, branon or an arbitrary linear combination of them)
+# channel to be analyzed (bb, cc, tt, tautau, mumu, WW, ZZ, hh, gammagamma, goldstinoline, pi0pi0, pi0gamma, ee, branon or an arbitrary linear combination of them)
 # The linear combination must be written this form:'br_1*channel_1+...+br_n*channel_n'!
 jointLklDM.Channel: bb
 

@@ -89,6 +89,7 @@ const Double_t Wmass=80.4;
 const Double_t Zmass=91.2;
 const Double_t Hmass=125;
 const Double_t gammamass=0;
+const Double_t goldstinomass=0;
 const Double_t pi0mass=0.135;
 const Double_t emass=0.511e-3;
 const Double_t int1mass=120.0;
@@ -1096,26 +1097,27 @@ void decode_channel(TObjArray* coefficients, Int_t &nChannels, TString *channelv
       normchannel.Append(channelval[iChannel]);
       minmass=0;
       
-      if     (!channelval[iChannel].CompareTo("bb",TString::kIgnoreCase))         {strchannel.Append("b#bar{b}");              minmass=TMath::Max(minmass,bmass);}
-      else if(!channelval[iChannel].CompareTo("cc",TString::kIgnoreCase))         {strchannel.Append("c#bar{c}");              minmass=TMath::Max(minmass,cmass);}
-      else if(!channelval[iChannel].CompareTo("tt",TString::kIgnoreCase))         {strchannel.Append("t#bar{t}");              minmass=TMath::Max(minmass,tmass);}
-      else if(!channelval[iChannel].CompareTo("tautau",TString::kIgnoreCase))     {strchannel.Append("#tau^{+}#tau^{-}");      minmass=TMath::Max(minmass,taumass);}
-      else if(!channelval[iChannel].CompareTo("mumu",TString::kIgnoreCase))       {strchannel.Append("#mu^{+}#mu^{-}");        minmass=TMath::Max(minmass,mumass);}
-      else if(!channelval[iChannel].CompareTo("WW",TString::kIgnoreCase))         {strchannel.Append("W^{+}W^{-}");            minmass=TMath::Max(minmass,Wmass);}
-      else if(!channelval[iChannel].CompareTo("ZZ",TString::kIgnoreCase))         {strchannel.Append("ZZ");                    minmass=TMath::Max(minmass,Zmass);}
-      else if(!channelval[iChannel].CompareTo("hh",TString::kIgnoreCase))         {strchannel.Append("HH");                    minmass=TMath::Max(minmass,Hmass);}
-      else if(!channelval[iChannel].CompareTo("gammagamma",TString::kIgnoreCase)) {strchannel.Append("#gamma#gamma");          minmass=TMath::Max(minmass,gammamass);}
-      else if(!channelval[iChannel].CompareTo("pi0pi0",TString::kIgnoreCase))     {strchannel.Append("#pi^{0}#pi^{0}");        minmass=TMath::Max(minmass,pi0mass);}
-      else if(!channelval[iChannel].CompareTo("gammapi0",TString::kIgnoreCase))   {strchannel.Append("#pi^{0}#gamma");         minmass=TMath::Max(minmass,pi0mass/2.);}
-      else if(!channelval[iChannel].CompareTo("pi0gamma",TString::kIgnoreCase))   {strchannel.Append("#pi^{0}#gamma");         minmass=TMath::Max(minmass,pi0mass/2.);}
-      else if(!channelval[iChannel].CompareTo("ee",TString::kIgnoreCase))         {strchannel.Append("e^{+}e^{-}");            minmass=TMath::Max(minmass,emass);}
-      else if(!channelval[iChannel].CompareTo("nuenue",TString::kIgnoreCase))     {strchannel.Append("#nu_{e}#nu_{e}");        minmass=TMath::Max(minmass,int1mass);}
-      else if(!channelval[iChannel].CompareTo("numunumu",TString::kIgnoreCase))   {strchannel.Append("#nu_{#mu}#nu_{#mu}");    minmass=TMath::Max(minmass,int1mass);}
-      else if(!channelval[iChannel].CompareTo("nutaunutau",TString::kIgnoreCase)) {strchannel.Append("#nu_{#tau}#nu_{#tau}");  minmass=TMath::Max(minmass,int1mass);}
-      else if(!channelval[iChannel].CompareTo("VV-4e",TString::kIgnoreCase))      {strchannel.Append("VV-4e");                 minmass=TMath::Max(minmass,int2mass);}
-      else if(!channelval[iChannel].CompareTo("VV-4mu",TString::kIgnoreCase))     {strchannel.Append("VV-4#mu");               minmass=TMath::Max(minmass,int3mass);}
-      else if(!channelval[iChannel].CompareTo("VV-4tau",TString::kIgnoreCase))    {strchannel.Append("VV-4#tau");              minmass=TMath::Max(minmass,int4mass);}
-      else if(!channelval[iChannel].CompareTo("branon",TString::kIgnoreCase))     {strchannel.Append("branon");                minmass=TMath::Max(minmass,branonmass);}
+      if     (!channelval[iChannel].CompareTo("bb",TString::kIgnoreCase))            {strchannel.Append("b#bar{b}");              minmass=TMath::Max(minmass,bmass);}
+      else if(!channelval[iChannel].CompareTo("cc",TString::kIgnoreCase))            {strchannel.Append("c#bar{c}");              minmass=TMath::Max(minmass,cmass);}
+      else if(!channelval[iChannel].CompareTo("tt",TString::kIgnoreCase))            {strchannel.Append("t#bar{t}");              minmass=TMath::Max(minmass,tmass);}
+      else if(!channelval[iChannel].CompareTo("tautau",TString::kIgnoreCase))        {strchannel.Append("#tau^{+}#tau^{-}");      minmass=TMath::Max(minmass,taumass);}
+      else if(!channelval[iChannel].CompareTo("mumu",TString::kIgnoreCase))          {strchannel.Append("#mu^{+}#mu^{-}");        minmass=TMath::Max(minmass,mumass);}
+      else if(!channelval[iChannel].CompareTo("WW",TString::kIgnoreCase))            {strchannel.Append("W^{+}W^{-}");            minmass=TMath::Max(minmass,Wmass);}
+      else if(!channelval[iChannel].CompareTo("ZZ",TString::kIgnoreCase))            {strchannel.Append("ZZ");                    minmass=TMath::Max(minmass,Zmass);}
+      else if(!channelval[iChannel].CompareTo("hh",TString::kIgnoreCase))            {strchannel.Append("HH");                    minmass=TMath::Max(minmass,Hmass);}
+      else if(!channelval[iChannel].CompareTo("gammagamma",TString::kIgnoreCase))    {strchannel.Append("#gamma#gamma");          minmass=TMath::Max(minmass,gammamass);}
+      else if(!channelval[iChannel].CompareTo("goldstinoline",TString::kIgnoreCase)) {strchannel.Append("goldstinoline");         minmass=TMath::Max(minmass,goldstinomass);}
+      else if(!channelval[iChannel].CompareTo("pi0pi0",TString::kIgnoreCase))        {strchannel.Append("#pi^{0}#pi^{0}");        minmass=TMath::Max(minmass,pi0mass);}
+      else if(!channelval[iChannel].CompareTo("gammapi0",TString::kIgnoreCase))      {strchannel.Append("#pi^{0}#gamma");         minmass=TMath::Max(minmass,pi0mass/2.);}
+      else if(!channelval[iChannel].CompareTo("pi0gamma",TString::kIgnoreCase))      {strchannel.Append("#pi^{0}#gamma");         minmass=TMath::Max(minmass,pi0mass/2.);}
+      else if(!channelval[iChannel].CompareTo("ee",TString::kIgnoreCase))            {strchannel.Append("e^{+}e^{-}");            minmass=TMath::Max(minmass,emass);}
+      else if(!channelval[iChannel].CompareTo("nuenue",TString::kIgnoreCase))        {strchannel.Append("#nu_{e}#nu_{e}");        minmass=TMath::Max(minmass,int1mass);}
+      else if(!channelval[iChannel].CompareTo("numunumu",TString::kIgnoreCase))      {strchannel.Append("#nu_{#mu}#nu_{#mu}");    minmass=TMath::Max(minmass,int1mass);}
+      else if(!channelval[iChannel].CompareTo("nutaunutau",TString::kIgnoreCase))    {strchannel.Append("#nu_{#tau}#nu_{#tau}");  minmass=TMath::Max(minmass,int1mass);}
+      else if(!channelval[iChannel].CompareTo("VV-4e",TString::kIgnoreCase))         {strchannel.Append("VV-4e");                 minmass=TMath::Max(minmass,int2mass);}
+      else if(!channelval[iChannel].CompareTo("VV-4mu",TString::kIgnoreCase))        {strchannel.Append("VV-4#mu");               minmass=TMath::Max(minmass,int3mass);}
+      else if(!channelval[iChannel].CompareTo("VV-4tau",TString::kIgnoreCase))       {strchannel.Append("VV-4#tau");              minmass=TMath::Max(minmass,int4mass);}
+      else if(!channelval[iChannel].CompareTo("branon",TString::kIgnoreCase))        {strchannel.Append("branon");                minmass=TMath::Max(minmass,branonmass);}
       else strchannel = "";
     }
 
@@ -1185,7 +1187,19 @@ void builddNdESignal(HdNdE* lkl,TString dNdEDir, Int_t nChannels,TString* channe
 	    else
 	      cout << "Ok!" << endl;
 	  }
-	else if(!channelval[iChannel].CompareTo("pi0pi0",TString::kIgnoreCase))
+ else if(!channelval[iChannel].CompareTo("goldstinoline",TString::kIgnoreCase))
+    {
+      Float_t goldstino_energy = 3*mdm/8; // E/m_DM = 3/8 for the goldstino monochromatic line
+      cout << "   * Setting dN/dE for a goldstino monochromatic line at energy " << goldstino_energy  << " GeV with BR = " << brval[iChannel] << " ... " << flush;
+      if(lkl->AdddNdESignalFunction("line",brval[iChannel],goldstino_energy,2))
+        {
+    cout << "Failed! <---------------- FATAL ERROR!!!" << endl;
+    exit(1);
+        }
+      else
+        cout << "Ok!" << endl;
+    }
+ else if(!channelval[iChannel].CompareTo("pi0pi0",TString::kIgnoreCase))
 	  {
 	    const Float_t mpi = 0.135; // pi0 mass in GeV
 	    Float_t emin =  mdm/2.*(1-TMath::Sqrt(1-mpi*mpi/(mdm*mdm)));
